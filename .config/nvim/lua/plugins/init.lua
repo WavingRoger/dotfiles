@@ -17,6 +17,9 @@ return {
         "stylua",        -- Lua formatter
         "clang-format",  -- C/C++ formatter
         "markdownlint",  -- Markdown linter
+        "black",
+        "isort",
+        "flake8",
       },
     },
   },
