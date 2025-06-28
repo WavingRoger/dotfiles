@@ -16,3 +16,6 @@ style = "Italic"
 [font.normal]
 family = "FiraCode Nerd Font Mono"
 style = "Regular"
+
+[window]
+opacity = 0.85  # 0.0 is fully transparent, 1.0 is fully opaque
