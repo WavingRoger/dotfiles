@@ -1,8 +1,12 @@
--- lua/plugins/rose-pine.lua
 return {
-	"rose-pine/neovim",
-	name = "rose-pine",
-	config = function()
-		vim.cmd("colorscheme rose-pine")
-	end
+  "olimorris/onedarkpro.nvim",
+  priority = 1000, -- Ensure it loads first
+  config = function()
+    require("onedarkpro").setup({
+      options = {
+        transparency = true,
+      },
+    })
+    vim.cmd("colorscheme onedark_vivid")
+  end,
 }
