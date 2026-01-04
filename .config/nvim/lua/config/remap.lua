@@ -1,16 +1,21 @@
 local map = vim.keymap.set
 local builtin = require("telescope.builtin")
 
--- 🧭 Telescope
-map("n", "<leader>ff", builtin.find_files, { desc = "🔍 Find files" })
-map("n", "<leader>fg", builtin.live_grep, { desc = "🔎 Live grep" })
-map("n", "<leader>fb", builtin.buffers, { desc = "📄 Open buffers" })
-map("n", "<leader>fh", builtin.help_tags, { desc = "❓ Help tags" })
-map("n", "<leader>fo", builtin.oldfiles, { desc = "📂 Recently opened files" })
-map("n", "<leader>fs", builtin.grep_string, { desc = "🔍 Grep word under cursor" })
-map("n", "<leader>fd", builtin.diagnostics, { desc = "🧼 Diagnostics list" })
+-- Telescope
+map("n", "<leader>ff", builtin.find_files, { desc = " Find files" })
+map("n", "<leader>fg", builtin.live_grep, { desc = " Live grep" })
+map("n", "<leader>fb", builtin.buffers, { desc = " Open buffers" })
+map("n", "<leader>fh", builtin.help_tags, { desc = " Help tags" })
+map("n", "<leader>fo", builtin.oldfiles, { desc = " Recently opened files" })
+map("n", "<leader>fs", builtin.grep_string, { desc = " Grep word under cursor" })
+map("n", "<leader>fd", builtin.diagnostics, { desc = " Diagnostics list" })
+map("n", "<leader>fc", function()
+  require('telescope.builtin').find_files {
+    cwd = vim.fn.stdpath("config")
+  }
+end, { desc = "Find file in Config" })
 
--- 📁 Oil
+-- Oil
 map("n", "-", "<cmd>Oil<CR>", { desc = "📁 Open Oil File Manager" })
 
 -- ⚙️ LSP
