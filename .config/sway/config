@@ -18,9 +18,6 @@ set $menu wmenu-run
 # -------------------------
 # Output configuration
 # -------------------------
-# Wallpaper
-output * bg /home/purag/Pictures/wallpapers/wallhaven-9oozpx_1920x1080.png fill
-
 # External monitor (TOP)
 output HDMI-A-1 resolution 1366x768 position 277,0 scale 1
 
@@ -40,6 +37,13 @@ input type:touchpad {
     dwt enabled
     middle_emulation enabled
 }
+
+# -------------------------
+# Window decorations
+# -------------------------
+default_border pixel 1
+default_floating_border pixel 1
+
 
 # -------------------------
 # Key bindings – basics
@@ -164,6 +168,14 @@ bindsym Print exec grim -g "$(slurp)" - \
     | tee ~/Pictures/screenshot-$(date +%s).png \
     | wl-copy
 
+exec_always swayidle -w \
+    timeout 300 'swaylock -f' \
+    timeout 600 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f'
+
+exec_always ~/.config/sway/scripts/random-wallpaper.sh
+bindsym $mod+Shift+w exec ~/.config/sway/scripts/random-wallpaper.sh
 # -------------------------
 # Status Bar
 # -------------------------

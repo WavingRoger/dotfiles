@@ -1,0 +1,21 @@
+image=/home/purag/Pictures/wallpapers/wallhaven-k881zd_1920x1080.png
+scaling=fill
+
+# General
+daemonize
+ignore-empty-password
+show-failed-attempts
+
+# Colors (gruvbox-ish, minimal)
+color=1d2021
+inside-color=1d2021cc
+ring-color=458588cc
+key-hl-color=83a598cc
+separator-color=00000000
+line-color=00000000
+
+# Text
+text-color=ebdbb2
+font=monospace
+font-size=14
+
