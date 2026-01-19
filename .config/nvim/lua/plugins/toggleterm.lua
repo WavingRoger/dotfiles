@@ -1,6 +1,7 @@
 return {
   {
     "akinsho/toggleterm.nvim",
+    cmd = { "ToggleTerm", "TermExec" },
     version = "*",
     opts = {
       size = 20,

@@ -7,6 +7,7 @@ return {
       skip_confirm_for_simple_edits = true,
       delete_to_trash = false,
     },
+    cmd = "Oil",
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
     -- You can use this instead if you prefer devicons:
     -- dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -22,5 +23,5 @@ return {
       })
     end,
   },
-  { "unblevable/quick-scope" }  
+  { "unblevable/quick-scope" }
 }
