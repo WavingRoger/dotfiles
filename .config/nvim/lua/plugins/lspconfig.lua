@@ -32,7 +32,11 @@ return {
       end,
     })
 
-    -- 🔥 Neovim 0.11 native LSP definitions
+    vim.lsp.config("marksman", {
+      capabilities = capabilities,
+    })
+
+
     vim.lsp.config("lua_ls", {
       capabilities = capabilities,
       settings = {
@@ -58,11 +62,11 @@ return {
       },
     })
 
-    -- Explicitly enable servers
     vim.lsp.enable({
       "lua_ls",
       "clangd",
       "biome",
+      "marksman",
     })
   end,
 }

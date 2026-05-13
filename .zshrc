@@ -52,3 +52,7 @@ PROMPT='%F{cyan}%n@%m%f %F{yellow}%~%f %# '
 # Bindkey
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+
+
+# Exports
+export MANPAGER="nvim +Man!"
