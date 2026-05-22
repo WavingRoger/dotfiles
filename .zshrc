@@ -56,3 +56,13 @@ bindkey "^[[1;5D" backward-word
 
 # Exports
 export MANPAGER="nvim +Man!"
+export PATH="$HOME/.config/emacs/bin:$PATH"
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/emulator
+
+
+fastfetch
