@@ -11,7 +11,9 @@ return {
       options = {
         "-xelatex",
         "-synctex=1",
-        "-interaction=nonstopmode"
+        "-interaction=nonstopmode",
+        '-file-line-error',
+
       }
     }
   end

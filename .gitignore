@@ -1,0 +1,63 @@
+```gitignore
+# Emacs byte-compiled files
+*.elc
+*.eln
+
+# Native compilation cache
+eln-cache/
+
+# ELPA packages (downloaded packages)
+elpa/
+
+# Auto-save and lock files
+auto-save-list/
+auto-save-list/*
+\#*\#
+.#*
+
+# Backup files
+*~
+*.bak
+
+# Recent files / session state
+recentf
+places
+savehist
+bookmarks
+projectile-bookmarks.eld
+url/
+
+# Projectile / cache
+.projectile-cache.eld
+
+# Org mode generated files
+*.org-id-locations
+.org-id-locations
+
+# Transient/Magit state
+transient/
+forge-database.sqlite
+forge-posts/
+
+# LSP / language server caches
+.lsp-session-v1
+.lsp-session
+
+# Desktop/session state
+.desktop
+.desktop.lock
+
+# Treesitter grammar cache
+tree-sitter/
+
+# Straight.el build artifacts (if using straight)
+straight/build/
+
+# Temporary files
+tmp/
+cache/
+
+# OS junk
+.DS_Store
+Thumbs.db
+```
