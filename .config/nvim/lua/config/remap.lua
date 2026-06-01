@@ -34,6 +34,25 @@ map("n", "<leader>gf", function()
   vim.lsp.buf.format({ async = true })
 end, { desc = " Format buffer" })
 
+
+
+map("n", "<leader>ra", function()
+  vim.cmd.RustLsp("codeAction")
+end, { desc = "Rust code actions" })
+
+map("n", "<leader>rr", function()
+  vim.cmd.RustLsp("runnables")
+end, { desc = "Rust runnables" })
+
+map("n", "<leader>re", function()
+  vim.cmd.RustLsp("expandMacro")
+end, { desc = "Expand macro" })
+
+map("n", "<leader>rd", function()
+  vim.cmd.RustLsp("openDocs")
+end, { desc = "Open rust docs" })
+
+
 --  Diagnostics
 map("n", "<leader>dd", vim.diagnostic.open_float, { desc = " Line diagnostics (float)" })
 map("n", "[d", vim.diagnostic.goto_prev, { desc = " Previous diagnostic" })
