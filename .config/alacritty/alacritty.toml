@@ -23,3 +23,5 @@ opacity = 0.90  # 0.0 is fully transparent, 1.0 is fully opaque
 [scrolling]
 history = 10000
 multiplier = 3
+
+

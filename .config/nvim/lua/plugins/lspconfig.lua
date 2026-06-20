@@ -63,7 +63,7 @@ return {
       capabilities = capabilities,
 
       settings = {
-        ["rust-analyzer"] = {
+        ["rust_analyzer"] = {
           cargo = {
             allFeatures = true,
           },
@@ -107,7 +107,44 @@ return {
     })
 
     -- =====================================================
-    -- JS / TS
+    -- JS / TS / React / Next.js
+    -- =====================================================
+    vim.lsp.config("ts_ls", {
+      capabilities = capabilities,
+
+      init_options = {
+        hostInfo = "neovim",
+      },
+
+      settings = {
+        typescript = {
+          inlayHints = {
+            includeInlayParameterNameHints = "all",
+            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayVariableTypeHints = true,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayEnumMemberValueHints = true,
+          },
+        },
+
+        javascript = {
+          inlayHints = {
+            includeInlayParameterNameHints = "all",
+            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayVariableTypeHints = true,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayEnumMemberValueHints = true,
+          },
+        },
+      },
+    })
+
+    -- =====================================================
+    -- Biome (Formatter + Linter)
     -- =====================================================
     vim.lsp.config("biome", {
       capabilities = capabilities,
@@ -117,6 +154,49 @@ return {
         "javascriptreact",
         "typescript",
         "typescriptreact",
+        "json",
+        "jsonc",
+      },
+    })
+
+    -- =====================================================
+    -- Svelte
+    -- =====================================================
+    vim.lsp.config("svelte", {
+      capabilities = capabilities,
+
+      settings = {
+        svelte = {
+          plugin = {
+            typescript = {
+              diagnostics = {
+                enable = true,
+              },
+
+              hover = {
+                enable = true,
+              },
+            },
+          },
+        },
+      },
+    })
+
+    -- =====================================================
+    -- Tailwind CSS
+    -- =====================================================
+    vim.lsp.config("tailwindcss", {
+      capabilities = capabilities,
+
+      filetypes = {
+        "html",
+        "css",
+        "scss",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "svelte",
       },
     })
 
@@ -162,7 +242,30 @@ return {
         },
       },
     })
+    -- =====================================================
+    -- Python
+    -- =====================================================
+    vim.lsp.config("pyright", {
+      capabilities = capabilities,
 
+      settings = {
+        pyright = {
+          disableOrganizeImports = true,
+        },
+
+        python = {
+          analysis = {
+            typeCheckingMode = "basic",
+            autoSearchPaths = true,
+            useLibraryCodeForTypes = true,
+          },
+        },
+      },
+    })
+
+    vim.lsp.config("ruff", {
+      capabilities = capabilities,
+    })
     -- =====================================================
     -- Enable Servers
     -- =====================================================
@@ -172,7 +275,12 @@ return {
       "biome",
       "marksman",
       "texlab",
-      "rust-analyzer",
+      "rust_analyzer",
+      "pyright",
+      "ruff",
+      "ts_ls",
+      "svelte",
+      "tailwindcss",
     })
   end,
 }
