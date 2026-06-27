@@ -57,7 +57,6 @@ bindkey "^[[1;5D" backward-word
 # Exports
 export MANPAGER="nvim +Man!"
 export PATH="$HOME/.cargo/bin:$PATH"
-export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
